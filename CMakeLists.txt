@@ -26,6 +26,6 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(cmodule)
 
-find_package(Boost REQUIRED COMPONENTS filesystem)
+find_package(fmt REQUIRED)
 
-ExeImport("tools" "dmzipper;Boost::filesystem")
+ExeImport("tools" "dmzipper;fmt::fmt")
