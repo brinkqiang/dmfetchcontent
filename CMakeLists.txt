@@ -16,4 +16,16 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(dmzipper)
 
-ExeImport("tools" "dmzipper")
+
+include(FetchContent)
+
+FetchContent_Declare(
+  cmodule
+  URL https://github.com/scapix-com/cmodule/archive/refs/tags/v2.0.1.zip
+)
+
+FetchContent_MakeAvailable(cmodule)
+
+find_package(Boost REQUIRED COMPONENTS filesystem)
+
+ExeImport("tools" "dmzipper;Boost::filesystem")
